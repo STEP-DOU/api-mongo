@@ -1,0 +1,8 @@
+streamlit
+pymongo
+neo4j
+python-dotenv
+matplotlib
+seaborn
+pandas
+networkx
