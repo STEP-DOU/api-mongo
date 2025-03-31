@@ -51,7 +51,7 @@ from database.neo4j import (
 )
 
 st.set_page_config(page_title="NoSQL Explorer", layout="wide")
-st.title("🧠 Projet NoSQL – MongoDB & Neo4j Explorer")
+st.title("Projet NoSQL – MongoDB & Neo4j Explorer")
 
 section = st.sidebar.radio("📂 Choisir une base", ["MongoDB", "Neo4j", "Analyse croisée"])
 

@@ -1,6 +1,21 @@
 
 # Projet NoSQL : Exploration et Interrogation de Bases de Données NoSQL avec Python
 
+## Aperçu de l'application
+
+Voici un aperçu de l'interface de l'application :
+
+![Aperçu de l'application](images/Capture.PNG)
+
+## Fonctionnalités
+
+L'application vous permet de :
+
+- **Analyser** les films dans MongoDB et Neo4j.
+- **Explorer** les genres, les réalisateurs et les acteurs.
+- **Recommander** des films en fonction des genres préférés d'un acteur.
+
+
 Ce projet vise à explorer et à interroger deux systèmes de gestion de bases de données NoSQL : **MongoDB** et **Neo4j**, en utilisant Python. Le but est de créer une application capable de récupérer, analyser et visualiser des données provenant des deux bases de données.
 
 ## Technologies utilisées
