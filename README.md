@@ -103,12 +103,3 @@ Ce projet vise à explorer et à interroger deux systèmes de gestion de bases d
 - Veillez à avoir **MongoDB** et **Neo4j** correctement configurés et en cours d'exécution pour interagir avec l'application.
 - Vous pouvez personnaliser l'interface Streamlit selon vos besoins pour afficher plus ou moins d'informations.
   
-## Contributions
-
-Les contributions sont les bienvenues ! Pour contribuer :
-1. Forkez le dépôt.
-2. Créez une nouvelle branche (`git checkout -b feature-nouvelle-fonction`).
-3. Commitez vos modifications (`git commit -am 'Ajout de nouvelle fonctionnalité'`).
-4. Poussez la branche (`git push origin feature-nouvelle-fonction`).
-5. Créez une Pull Request.
-
