@@ -136,3 +136,32 @@ def get_avg_runtime_by_decade(collection):
         {"$sort": {"_id": 1}}
     ]
     return list(collection.aggregate(pipeline))
+
+def recommend_film_mongo(collection, preferred_genres, excluded_actor):
+    projection = {"title": 1, "genre": 1, "rating": 1, "Votes": 1, "Actors": 1}
+
+    query_steps = [
+        {"rating": 7.0, "votes": 10000},
+        {"rating": 6.5, "votes": 5000},
+        {"rating": 6.0, "votes": 1000},
+        {"rating": 0.0, "votes": 0}
+    ]
+
+    # Parcours de chaque niveau de filtrage
+    for step in query_steps:
+        query = {
+            "genre": {"$in": preferred_genres},  # Prend tous les genres préférés
+            "Actors": {"$not": {"$regex": excluded_actor, "$options": "i"}},
+            "rating": {"$gte": step["rating"]},
+            "Votes": {"$gte": step["votes"]}
+        }
+        # Recherche un film correspondant aux critères
+        film = collection.find_one(query, projection, sort=[("rating", -1)])
+        
+        if film:
+            # Si un film est trouvé, on l'affiche et retourne
+            film["criteria"] = f"Note ≥ {step['rating']}, Votes ≥ {step['votes']}"
+            return film
+
+    # Si aucun film n'est trouvé après tous les essais
+    return None
